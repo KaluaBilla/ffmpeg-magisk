@@ -2,9 +2,7 @@ FFMPEG_ARCH="$(getprop ro.product.cpu.abi)"
 type="Dynamic"
 API="29"
 
-[ "${type}" = "Dynamic" ] && [ "$(getprop ro.build.version.sdk)" -lt "${API}" ] && ui_print "- WARNING: API Mismatch, Expected >= ${API}, is $(getprop ro.build.version.sdk)"
-
-abort
+[ "${type}" = "Dynamic" ] && [ "$(getprop ro.build.version.sdk)" -lt "${API}" ] && ui_print "- WARNING: API Mismatch, Expected >= ${API}, is $(getprop ro.build.version.sdk)" && abort
 
 SYSTEM_DIR="$MODPATH/system"
 mkdir -p "$SYSTEM_DIR"
