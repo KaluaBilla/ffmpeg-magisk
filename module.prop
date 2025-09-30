@@ -1,0 +1,7 @@
+id=FFmpeg
+name=FFmpeg
+version=8.0
+versionCode=8
+author=KaluaBilla
+description=FFmpeg for android
+updateJson=https://raw.githubusercontent.com/KaluaBilla/ffmpeg-android/main/updateJson
