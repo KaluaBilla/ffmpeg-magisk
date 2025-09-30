@@ -4,6 +4,8 @@ API="29"
 
 [ "${type}" = "Dynamic" ] && [ "$(getprop ro.build.version.sdk)" -lt "${API}" ] && ui_print "- WARNING: API Mismatch, Expected >= ${API}, is $(getprop ro.build.version.sdk)"
 
+abort
+
 SYSTEM_DIR="$MODPATH/system"
 mkdir -p "$SYSTEM_DIR"
 cd "$SYSTEM_DIR" || exit 1
@@ -21,11 +23,6 @@ case "${FFMPEG_ARCH}" in
         ;;
 esac
 
-if [ ! -f "$tarball" ]; then
-    ui_print "- FFmpeg archive not found for ABI '${FFMPEG_ARCH}'"
-    abort
-fi
-
 tar -xf "$tarball"
 
 if [ "$type" = "Dynamic" ]; then
@@ -41,10 +38,8 @@ if [ "$type" = "Dynamic" ]; then
 
     if [ -f "/system/$libdir/libOpenCL.so" ]; then
         cp -a "/system/$libdir/libOpenCL.so" "$SYSTEM_DIR/$libdir/"
-        ui_print "- Copied libOpenCL.so from /system/$libdir"
     elif [ -f "/system/vendor/$libdir/libOpenCL.so" ]; then
         cp -a "/system/vendor/$libdir/libOpenCL.so" "$SYSTEM_DIR/$libdir/"
-        ui_print "- Copied libOpenCL.so from /system/vendor/$libdir"
     else
         ui_print "- libOpenCL.so not found in standard paths, searching /system..."
         found=$(find -L /system -iname "libOpenCL.so" | grep "$libdir" | head -n 1)
