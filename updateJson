@@ -1,6 +1,6 @@
 {
   "versionCode": 8,
   "version": "8.0",
-  "zipUrl": "",
+  "zipUrl": "https://github.com/KaluaBilla/ffmpeg-magisk/releases/download/v8.0/ffmpeg-magisk-8.0.zip",
   "changelog": "https://raw.githubusercontent.com/KaluaBilla/ffmpeg-magisk/main/changelog.md"
 }
