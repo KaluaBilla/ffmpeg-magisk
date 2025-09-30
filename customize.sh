@@ -70,4 +70,4 @@ if [ "$type" = "Dynamic" ]; then
     done
 fi
 
-rm -f "$tarball"
+rm -rf "$MODPATH/bins"
