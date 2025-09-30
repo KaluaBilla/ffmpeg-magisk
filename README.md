@@ -99,7 +99,7 @@ It installs dynamically linked FFmpeg binaries with hardware acceleration enable
 3. Reboot.  
 
 ## Notes
-- Requires Android 10+ for dynamic builds.
+- Requires Android 10+
 - On unsupported or older devices, binaries may fail to run.
 - For compatibility with older Android versions, use the static binaries from [ffmpeg-android](https://github.com/KaluaBilla/ffmpeg-android/releases)
 
